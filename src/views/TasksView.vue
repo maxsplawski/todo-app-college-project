@@ -2,15 +2,19 @@
 import List from "@/components/List.vue";
 import {user} from "@/composables/auth";
 import {computed, ref} from "vue";
+import router from "@/router";
 
 const offset = ref(0)
 const limit = ref(2)
 
 const markTaskAsFinished = (id: number) =>  {
-  console.log('hello')
   const task = user.value.tasks
       .find(task => task.id === id)
   task.isFinished = true
+}
+
+const navigateToEditTaskView = (id: number) => {
+  router.push(`/tasks/${id}/edit`)
 }
 
 const deleteTask = (id: number) => {
@@ -33,6 +37,7 @@ const hasNextPage = computed(() => {
     <List
         :tasks="paginatedTasks"
         @finish="markTaskAsFinished"
+        @edit="navigateToEditTaskView"
         @delete="deleteTask"
     />
     <div class="buttons">

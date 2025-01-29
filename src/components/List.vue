@@ -12,6 +12,7 @@ defineProps<{
       <Task
           :task="task"
           @finish="(id: number) => $emit('finish', id)"
+          @edit="(id: number) => $emit('edit', id)"
           @delete="(id: number) => $emit('delete', id)"
       />
     </li>

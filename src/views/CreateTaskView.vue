@@ -36,6 +36,6 @@ const newTask = {
           v-model="newTask.description"
       >
     </div>
-    <button class="button" type="submit">Add</button>
+    <button type="submit" class="button" >Add task</button>
   </form>
 </template>

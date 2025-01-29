@@ -3,6 +3,7 @@ import HomeView from '../views/HomeView.vue'
 import TasksView from "@/views/TasksView.vue";
 import CreateTaskView from "@/views/CreateTaskView.vue";
 import SettingsView from "@/views/SettingsView.vue";
+import EditTaskView from "@/views/EditTaskView.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -21,6 +22,12 @@ const router = createRouter({
       path: '/tasks/create',
       name: 'createTask',
       component: CreateTaskView,
+    },
+    {
+      path: "/tasks/:id/edit",
+      name: "editTask",
+      component: EditTaskView,
+      props: true,
     },
     {
       path: '/settings',

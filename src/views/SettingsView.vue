@@ -8,9 +8,9 @@ const nameModel = ref(user.value.name);
 <template>
   <form @submit.prevent="user.name = nameModel" class="create-form">
     <div class="form-input">
-      <label for="title">Username</label>
+      <label for="username">Username</label>
       <input
-          name="title"
+          name="username"
           type="text"
           v-model="nameModel"
       >

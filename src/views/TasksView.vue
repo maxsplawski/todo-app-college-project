@@ -23,7 +23,8 @@ const deleteTask = (id: number) => {
 }
 
 const paginatedTasks = computed(() => {
-  return user.value.tasks.slice((offset.value * limit.value), ((offset.value + 1) * limit.value))
+  return user.value.tasks
+      .slice((offset.value * limit.value), ((offset.value + 1) * limit.value))
 })
 
 const hasNextPage = computed(() => {
@@ -32,7 +33,8 @@ const hasNextPage = computed(() => {
 </script>
 
 <template>
-  <div class="tasks">
+  <div class="flex-column">
+    <h2>Tasks</h2>
     <RouterLink to="/tasks/create" class="button">Add a new task</RouterLink>
     <List
         :tasks="paginatedTasks"
@@ -41,8 +43,8 @@ const hasNextPage = computed(() => {
         @delete="deleteTask"
     />
     <div class="buttons">
-      <button type="button" @click="offset--" :disabled="offset === 0" class="button"><</button>
-      <button type="button" @click="offset++" :disabled="!hasNextPage" class="button">></button>
+      <button type="button" @click="offset--" :disabled="offset === 0" class="button">&lang;</button>
+      <button type="button" @click="offset++" :disabled="!hasNextPage" class="button">&rang;</button>
     </div>
   </div>
 </template>

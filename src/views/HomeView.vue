@@ -3,8 +3,8 @@ import {user} from "@/composables/auth";
 </script>
 
 <template>
-  <div class="home">
-    <div>Hello, {{ user.name }}!</div>
+  <div class="flex-column">
+    <h2>Hello, {{ user.name }}!</h2>
     <div>You have {{ user.tasks.length }} {{ user.tasks.length > 0 && user.tasks.length < 2 ? "task" : "tasks" }}</div>
     <template v-if="user.tasks.length">
       <RouterLink to="/tasks" class="button">View tasks</RouterLink>

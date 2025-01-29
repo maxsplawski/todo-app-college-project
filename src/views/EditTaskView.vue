@@ -26,9 +26,9 @@ const updateTask = (task: Task) => {
 </script>
 
 <template>
-  <div class="edit-form">
+  <div class="flex-column">
     <h2>Edit {{ task.title }}</h2>
-    <form @submit.prevent="updateTask(task)">
+    <form @submit.prevent="updateTask(task)" class="flex-column">
       <div class="form-input">
         <label for="title">Title</label>
         <input

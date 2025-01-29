@@ -19,7 +19,7 @@ const newTask = {
 </script>
 
 <template>
-  <form @submit.prevent="saveTask(newTask)" class="create-form">
+  <form @submit.prevent="saveTask(newTask)" class="flex-column">
     <div class="form-input">
       <label for="title">Title</label>
       <input
@@ -36,6 +36,6 @@ const newTask = {
           v-model="newTask.description"
       >
     </div>
-    <button type="submit" class="button" >Add task</button>
+    <button type="submit" class="button">Add task</button>
   </form>
 </template>

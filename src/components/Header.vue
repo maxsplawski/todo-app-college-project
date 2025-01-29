@@ -4,7 +4,7 @@ import {RouterLink} from "vue-router";
 
 <template>
   <header>
-    <div>Task Management App</div>
+    <h1>Task Management App</h1>
     <nav>
       <ul>
         <RouterLink to="/">Home</RouterLink>
@@ -14,7 +14,3 @@ import {RouterLink} from "vue-router";
     </nav>
   </header>
 </template>
-
-<style scoped>
-
-</style>

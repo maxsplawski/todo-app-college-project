@@ -7,24 +7,13 @@ defineProps<{
 </script>
 
 <template>
-  <div class="">
-    <div>
-      <ul v-for="task in tasks" :key="task.id">
-        <li>
-          <Task
-              :task="task"
-              @finish="(id: number) => $emit('finish', id)"
-              @delete="(id: number) => $emit('delete', id)"
-          />
-        </li>
-      </ul>
-    </div>
-    <div>
-      <RouterLink to="/tasks/create">Add a new task</RouterLink>
-    </div>
-  </div>
+  <ul v-for="task in tasks" :key="task.id">
+    <li>
+      <Task
+          :task="task"
+          @finish="(id: number) => $emit('finish', id)"
+          @delete="(id: number) => $emit('delete', id)"
+      />
+    </li>
+  </ul>
 </template>
-
-<style scoped>
-
-</style>

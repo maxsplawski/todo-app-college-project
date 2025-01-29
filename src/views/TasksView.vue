@@ -7,6 +7,7 @@ const offset = ref(0)
 const limit = ref(2)
 
 const markTaskAsFinished = (id: number) =>  {
+  console.log('hello')
   const task = user.value.tasks
       .find(task => task.id === id)
   task.isFinished = true
@@ -27,13 +28,16 @@ const hasNextPage = computed(() => {
 </script>
 
 <template>
-  <main>
+  <div class="tasks">
+    <RouterLink to="/tasks/create" class="button">Add a new task</RouterLink>
     <List
         :tasks="paginatedTasks"
         @finish="markTaskAsFinished"
         @delete="deleteTask"
     />
-    <button :disabled="offset === 0" @click="offset--"><</button>
-    <button :disabled="!hasNextPage" @click="offset++">></button>
-  </main>
+    <div class="buttons">
+      <button type="button" @click="offset--" :disabled="offset === 0" class="button"><</button>
+      <button type="button" @click="offset++" :disabled="!hasNextPage" class="button">></button>
+    </div>
+  </div>
 </template>

@@ -4,22 +4,22 @@ import {useRouter} from "vue-router";
 
 const router = useRouter()
 
-const saveTask = (task: Task) => {
-  task.id = user.value.tasks.length + 1
-  user.value.tasks.push(task)
+const saveTask = () => {
+  newTask.id = user.value.tasks.length + 1
+  user.value.tasks.push(newTask)
   router.push("/tasks")
 }
 
 const newTask = {
   id: 0,
-  title: null,
-  description: null,
+  title: "",
+  description: "",
   isFinished: false,
 }
 </script>
 
 <template>
-  <form @submit.prevent="saveTask(newTask)" class="flex-column">
+  <form @submit.prevent="saveTask" class="flex-column">
     <div class="form-input">
       <label for="title">Title</label>
       <input

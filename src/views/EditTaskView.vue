@@ -12,7 +12,7 @@ const task = user.value.tasks.find(task => task.id === +props.id);
 const titleModel = ref(task?.title)
 const descriptionModel = ref(task?.description)
 
-const updateTask = (task: Task) => {
+const updateTask = () => {
   user.value.tasks = user.value.tasks.map(task => {
     if (task.id !== +props.id) return task;
     return {
@@ -27,8 +27,8 @@ const updateTask = (task: Task) => {
 
 <template>
   <div class="flex-column">
-    <h2>Edit {{ task.title }}</h2>
-    <form @submit.prevent="updateTask(task)" class="flex-column">
+    <h2>Edit {{ task?.title }}</h2>
+    <form @submit.prevent="updateTask" class="flex-column">
       <div class="form-input">
         <label for="title">Title</label>
         <input

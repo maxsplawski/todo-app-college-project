@@ -10,7 +10,9 @@ const limit = ref(2)
 const markTaskAsFinished = (id: number) =>  {
   const task = user.value.tasks
       .find(task => task.id === id)
-  task.isFinished = true
+  if (task) {
+    task.isFinished = true
+  }
 }
 
 const navigateToEditTaskView = (id: number) => {

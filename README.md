@@ -1,6 +1,6 @@
-# task-management-app
+# Task Management App College Project
 
-This template should help get you started developing with Vue 3 in Vite.
+This is a sample Task Management App built with Vue 3 for a college project.
 
 ## Recommended IDE Setup
 
@@ -26,14 +26,8 @@ npm install
 npm run dev
 ```
 
-### Type-Check, Compile and Minify for Production
+### Compile and Minify for Production
 
 ```sh
 npm run build
-```
-
-### Run Unit Tests with [Vitest](https://vitest.dev/)
-
-```sh
-npm run test:unit
 ```
